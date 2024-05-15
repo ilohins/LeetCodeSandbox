@@ -2,7 +2,7 @@ package leetcode.solutions;
 
 public class RansomNote_NO_383 { 
 	
-	public boolean canConstructSLOW(String ransomNote, String magazine) {
+	public boolean canConstruct_SLOW(String ransomNote, String magazine) {
 		
 		String magazineCopy = magazine;
 			
@@ -18,7 +18,7 @@ public class RansomNote_NO_383 {
 		return true;
 	}
 	
-	public boolean canConstruct(String ransomNote, String magazine) {
+	public boolean canConstruct_BetterButSlow(String ransomNote, String magazine) {
 		
 		if (ransomNote.length() > magazine.length()) {
 			return false;
@@ -45,6 +45,25 @@ public class RansomNote_NO_383 {
 				}
 			} while (idx != Integer.MAX_VALUE);
 			
+		}
+		
+		return true;
+	}
+	
+	public boolean canConstruct(String ransomNote, String magazine) {
+		
+		int[] charCounter = new int[26]; //-97
+
+		for (char ch : magazine.toCharArray()) {
+			charCounter[((int)ch) - 97] = charCounter[((int)ch) - 97] + 1;
+		}
+		
+		for(char randsChar : ransomNote.toCharArray()) {
+			if(charCounter[((int)randsChar) - 97] <= 0) {
+				return false;
+			}
+			
+			charCounter[((int)randsChar) - 97] = charCounter[((int)randsChar) - 97] - 1;
 		}
 		
 		return true;
