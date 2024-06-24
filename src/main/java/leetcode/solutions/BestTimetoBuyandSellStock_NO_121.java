@@ -93,18 +93,4 @@ public class BestTimetoBuyandSellStock_NO_121 {
     	
     	return maxKnownDif;
     }
-	
-    public static void main(String[] args) {
-		BestTimetoBuyandSellStock_NO_121 s = new BestTimetoBuyandSellStock_NO_121();
-		
-		System.out.println(s.maxProfit(new int[] {1,23,4,5,6,7,8,53}));
-		System.out.println(s.maxProfit(new int[] {1,2,3,4,5}));
-		System.out.println(s.maxProfit(new int[] {7,6,5,4,3,2,1}));
-		System.out.println(s.maxProfit(new int[] {7,6,5,4,2,3,1}));
-		System.out.println(s.maxProfit(new int[] {1}));
-		System.out.println(s.maxProfit(new int[] {1,1}));
-		System.out.println(s.maxProfit(new int[] {2,2}));
-		System.out.println(s.maxProfit(new int[] {}));
-		System.out.println(s.maxProfit(new int[] {3,3,5,0,0,3,1,4}));
-	}
 }
