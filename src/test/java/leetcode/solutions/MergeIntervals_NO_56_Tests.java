@@ -132,7 +132,38 @@ public class MergeIntervals_NO_56_Tests {
 	 */
 	@Test
 	public void testCanCompleteCircuit_reruns() {
+		{
+			int[][] input = new int[][] { { 1, 4 }, { 0, 4 }};
+			int[][] output = solution.merge(input);
+			int[][] expected = new int[][] { { 0, 4 } };
 
+			String message = "Numbers: " + Arrays.deepToString(input) + "; result: " + Arrays.deepToString(output)
+					+ "; expected: " + Arrays.deepToString(expected);
+
+			assertTrue(message, quickCompare(output, expected));
+		}
+		
+		{
+			int[][] input = new int[][] { { 1, 4 }, { 0, 5 }};
+			int[][] output = solution.merge(input);
+			int[][] expected = new int[][] { { 0, 5 } };
+
+			String message = "Numbers: " + Arrays.deepToString(input) + "; result: " + Arrays.deepToString(output)
+					+ "; expected: " + Arrays.deepToString(expected);
+
+			assertTrue(message, quickCompare(output, expected));
+		}
+		
+		{
+			int[][] input = new int[][] { { 2, 3 }, { 4, 5 }, { 6, 7}, {1, 10}};
+			int[][] output = solution.merge(input);
+			int[][] expected = new int[][] { { 1, 10 } };
+
+			String message = "Numbers: " + Arrays.deepToString(input) + "; result: " + Arrays.deepToString(output)
+					+ "; expected: " + Arrays.deepToString(expected);
+
+			assertTrue(message, quickCompare(output, expected));
+		}
 	}
 
 	private boolean quickCompare(int[][] a, int[][] b) {
