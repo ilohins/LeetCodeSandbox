@@ -1,7 +1,6 @@
 package leetcode.solutions;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class SummaryRanges_NO_228 {

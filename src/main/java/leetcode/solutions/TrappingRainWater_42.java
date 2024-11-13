@@ -1,7 +1,5 @@
 package leetcode.solutions;
 
-import java.util.Arrays;
-
 /**
  * Solution to try: 1) Find highest point, that is the start point 2) Find the
  * next highest a peak (defined by elevation gain) moving left (array
@@ -22,7 +20,7 @@ import java.util.Arrays;
  * Note: not the best implementation, but using Arrays or streams will increase
  * number of iterations, therefore performance and memory usage.
  * 
- * Maybe try to redo this sequentially, left to right. Idea will be similar:
+ * Maybe try to REDO this sequentially, left to right. Idea will be similar:
  * Find the 1st peak, then find the next one that is higher or similar height,
  * calculate accumulation, if there are no higher or similar peaks, take the
  * highest available. Reset 1st peak with current, continue again.
