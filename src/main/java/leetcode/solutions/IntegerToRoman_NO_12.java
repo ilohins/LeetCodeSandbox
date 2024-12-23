@@ -1,8 +1,5 @@
 package leetcode.solutions;
 
-/**
- * this is not a great code... refactor later
- */
 public class IntegerToRoman_NO_12 {
 	private final char[] romanCharacters = new char[] { 'M', 'D', 'C', 'L', 'X', 'V', 'I' };
 
@@ -10,77 +7,79 @@ public class IntegerToRoman_NO_12 {
 		StringBuilder result = new StringBuilder();
 
 		for (char ch : romanCharacters) {
-			num = handle4And9(num, result);
-			num = applyChar(ch, num, result);
+			num = processRomanLetter(ch, num, result);
 		}
 
 		return result.toString();
 	}
 
-	private int handle4And9(int num, StringBuilder result) {
-		int fd = firstDigit(num);
+	private int processRomanLetter(char ch, int num, StringBuilder result) {
+		int specialScenario = 0;
+		int letterValue = 0;
+		String romanLetters = "";
 
-		if (fd == 4 || fd == 9) {
-			if (num - 900 >= 0) {
-				result.append("CM");
-				return num - 900;
-			} else if (num - 400 >= 0) {
-				result.append("CD");
-				return num - 400;
-			} else if (num - 90 >= 0) {
-				result.append("XC");
-				return num - 90;
-			} else if (num - 40 >= 0) {
-				result.append("XL");
-				return num - 40;
-			} else if (num - 9 >= 0) {
-				result.append("IX");
-				return num - 9;
-			} else if (num - 4 >= 0) {
-				result.append("IV");
-				return num - 4;
+		switch (ch) {
+			case 'M' -> {
+				letterValue = 1000;
+			}
+			case 'D' -> {
+				specialScenario = 900;
+				letterValue = 500;
+				romanLetters = "CM";
+			}
+			case 'C' -> {
+				specialScenario = 400;
+				letterValue = 100;
+				romanLetters = "CD";
+			}
+			case 'L' -> {
+				specialScenario = 90;
+				letterValue = 50;
+				romanLetters = "XC";
+			}
+			case 'X' -> {
+				specialScenario = 40;
+				letterValue = 10;
+				romanLetters = "XL";
+			}
+			case 'V' -> {
+				specialScenario = 9;
+				letterValue = 5;
+				romanLetters = "IX";
+			}
+			case 'I' -> {
+				specialScenario = 4;
+				letterValue = 1;
+				romanLetters = "IV";
 			}
 		}
 
+		//1. handle exception scenarios when number starts with 4 and 9
+		
+		//Found this formula on stackoverflow; works well for 1 - 4000 values range
+		int fd = (num == 0) ? 0 : (int) Math.floor(num / Math.pow(10, Math.floor(Math.log10(num))));
+
+		if ((fd == 4 || fd == 9) && (specialScenario != 0) && (num - specialScenario >= 0)) {
+			num = num - specialScenario;
+			result.append(romanLetters);
+		}
+
+		//2. division based translation logic
+		num = applyChar(ch, num, result, letterValue);
+
 		return num;
 	}
 
-	private int applyChar(char ch, int num, StringBuilder result) {
+	private int applyChar(char ch, int num, StringBuilder result, int letterValue) {
 
-		int charValue = translate(ch);
-		if (num - charValue >= 0) {
-			num = num - charValue;
+		if (num - letterValue >= 0) {
+			num = num - letterValue;
 			result.append(ch);
-			num = applyChar(ch, num, result);
+			
+			//recursion could populate up to 3 letters (4th handled in the special scenario block)
+			num = applyChar(ch, num, result, letterValue);
 		}
 
 		return num;
 	}
-
-	private int translate(char ch) {
-		return switch (ch) {
-		case 'I' -> 1;
-		case 'V' -> 5;
-		case 'X' -> 10;
-		case 'L' -> 50;
-		case 'C' -> 100;
-		case 'D' -> 500;
-		case 'M' -> 1000;
-
-		default -> 0;
-		};
-	}
-
-	/*
-	 * Found on stackoverflow; works well for 4000 .. 1 values
-	 */
-	public int firstDigit(int x) {
-		if (x == 0) {
-			return 0;
-		}
-
-		x = Math.abs(x);
-		return (int) Math.floor(x / Math.pow(10, Math.floor(Math.log10(x))));
-	}
-
 }
