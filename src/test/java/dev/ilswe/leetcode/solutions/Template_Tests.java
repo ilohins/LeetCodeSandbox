@@ -29,14 +29,14 @@ public class Template_Tests {
 	 * Tests provided by LeetCode
 	 */
 	@Test
-	public void testCanCompleteCircuit_given() {
+	public void test_given() {
 	}
 	
 	/**
 	 * Tests added by the developer
 	 */
 	@Test
-	public void testCanCompleteCircuit_added() {
+	public void test_added() {
 		
 	}
 	
@@ -44,7 +44,7 @@ public class Template_Tests {
 	 * Tests added by the developer to test unlikely scenarios
 	 */
 	@Test
-	public void testCanCompleteCircuit_negative() {
+	public void test_negative() {
 		
 	}
 	
@@ -52,7 +52,7 @@ public class Template_Tests {
 	 * Tests from failed LeetCode run debugs (except performance)
 	 */
 	@Test
-	public void testCanCompleteCircuit_reruns() {
+	public void test_reruns() {
 		
 	}
 }

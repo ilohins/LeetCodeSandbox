@@ -27,7 +27,7 @@ public class AddTwoNumbers_NO_2_Tests {
 	 * Tests provided by LeetCode
 	 */
 	@Test
-	public void testCanCompleteCircuit_given() {
+	public void test_given() {
 		{
 			String value1 = "342";
 			String value2 = "465";
@@ -60,7 +60,7 @@ public class AddTwoNumbers_NO_2_Tests {
 	 * Tests added by the developer
 	 */
 	@Test
-	public void testCanCompleteCircuit_added() {
+	public void test_added() {
 		{
 			String value1 = "0";
 			String value2 = "9999999999";
@@ -129,7 +129,7 @@ public class AddTwoNumbers_NO_2_Tests {
 	 * Tests added by the developer to test unlikely scenarios
 	 */
 	@Test
-	public void testCanCompleteCircuit_negative() {
+	public void test_negative() {
 		
 	}
 	
@@ -137,7 +137,7 @@ public class AddTwoNumbers_NO_2_Tests {
 	 * Tests from failed LeetCode run debugs (except performance)
 	 */
 	@Test
-	public void testCanCompleteCircuit_reruns() {
+	public void test_reruns() {
 		
 	}
 	
