@@ -21,7 +21,7 @@ public class Template_Tests {
 	}
 	
 	@AfterEach
-	public void finalize() {
+	public void afterEach() {
 		System.out.println("JUNIT for " + this.getClass().getSimpleName() + " completed in " + (System.nanoTime() - timer) + "ns");
 	}
 	

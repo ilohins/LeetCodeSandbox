@@ -1,6 +1,6 @@
 package dev.ilswe.leetcode.solutions.mmxxiv;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Arrays;
 
@@ -27,7 +27,7 @@ public class MergeIntervals_NO_56_Tests {
 	}
 
 	@AfterEach
-	public void finalize() {
+	public void afterEach() {
 		System.out.println(
 				"JUNIT for " + this.getClass().getSimpleName() + " completed in " + (System.nanoTime() - timer) + "ns");
 	}
@@ -45,7 +45,7 @@ public class MergeIntervals_NO_56_Tests {
 			String message = "Numbers: " + Arrays.deepToString(input) + "; result: " + Arrays.deepToString(output)
 					+ "; expected: " + Arrays.deepToString(expected);
 
-			assertTrue(message, quickCompare(output, expected));
+			assertTrue(quickCompare(output, expected), message);
 		}
 
 		{
@@ -56,7 +56,7 @@ public class MergeIntervals_NO_56_Tests {
 			String message = "Numbers: " + Arrays.deepToString(input) + "; result: " + Arrays.deepToString(output)
 					+ "; expected: " + Arrays.deepToString(expected);
 
-			assertTrue(message, quickCompare(output, expected));
+			assertTrue(quickCompare(output, expected), message);
 		}
 	}
 
@@ -73,7 +73,7 @@ public class MergeIntervals_NO_56_Tests {
 			String message = "Numbers: " + Arrays.deepToString(input) + "; result: " + Arrays.deepToString(output)
 					+ "; expected: " + Arrays.deepToString(expected);
 
-			assertTrue(message, quickCompare(output, expected));
+			assertTrue(quickCompare(output, expected), message);
 		}
 
 		{
@@ -84,7 +84,7 @@ public class MergeIntervals_NO_56_Tests {
 			String message = "Numbers: " + Arrays.deepToString(input) + "; result: " + Arrays.deepToString(output)
 					+ "; expected: " + Arrays.deepToString(expected);
 
-			assertTrue(message, quickCompare(output, expected));
+			assertTrue(quickCompare(output, expected), message);
 		}
 
 		{
@@ -95,7 +95,7 @@ public class MergeIntervals_NO_56_Tests {
 			String message = "Numbers: " + Arrays.deepToString(input) + "; result: " + Arrays.deepToString(output)
 					+ "; expected: " + Arrays.deepToString(expected);
 
-			assertTrue(message, quickCompare(output, expected));
+			assertTrue(quickCompare(output, expected), message);
 		}
 
 		{
@@ -106,7 +106,7 @@ public class MergeIntervals_NO_56_Tests {
 			String message = "Numbers: " + Arrays.deepToString(input) + "; result: " + Arrays.deepToString(output)
 					+ "; expected: " + Arrays.deepToString(expected);
 
-			assertTrue(message, quickCompare(output, expected));
+			assertTrue(quickCompare(output, expected), message);
 		}
 
 		{
@@ -117,7 +117,7 @@ public class MergeIntervals_NO_56_Tests {
 			String message = "Numbers: " + Arrays.deepToString(input) + "; result: " + Arrays.deepToString(output)
 					+ "; expected: " + Arrays.deepToString(expected);
 
-			assertTrue(message, quickCompare(output, expected));
+			assertTrue(quickCompare(output, expected), message);
 		}
 	}
 
@@ -142,7 +142,7 @@ public class MergeIntervals_NO_56_Tests {
 			String message = "Numbers: " + Arrays.deepToString(input) + "; result: " + Arrays.deepToString(output)
 					+ "; expected: " + Arrays.deepToString(expected);
 
-			assertTrue(message, quickCompare(output, expected));
+			assertTrue(quickCompare(output, expected), message);
 		}
 		
 		{
@@ -153,7 +153,7 @@ public class MergeIntervals_NO_56_Tests {
 			String message = "Numbers: " + Arrays.deepToString(input) + "; result: " + Arrays.deepToString(output)
 					+ "; expected: " + Arrays.deepToString(expected);
 
-			assertTrue(message, quickCompare(output, expected));
+			assertTrue(quickCompare(output, expected), message);
 		}
 		
 		{
@@ -164,7 +164,7 @@ public class MergeIntervals_NO_56_Tests {
 			String message = "Numbers: " + Arrays.deepToString(input) + "; result: " + Arrays.deepToString(output)
 					+ "; expected: " + Arrays.deepToString(expected);
 
-			assertTrue(message, quickCompare(output, expected));
+			assertTrue(quickCompare(output, expected), message);
 		}
 	}
 

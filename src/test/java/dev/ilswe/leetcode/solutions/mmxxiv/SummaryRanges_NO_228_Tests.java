@@ -1,6 +1,6 @@
 package dev.ilswe.leetcode.solutions.mmxxiv;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Arrays;
 import java.util.List;
@@ -28,7 +28,7 @@ public class SummaryRanges_NO_228_Tests {
 	}
 
 	@AfterEach
-	public void finalize() {
+	public void afterEach() {
 		System.out.println(
 				"JUNIT for " + this.getClass().getSimpleName() + " completed in " + (System.nanoTime() - timer) + "ns");
 	}
@@ -46,7 +46,7 @@ public class SummaryRanges_NO_228_Tests {
 			String message = "Numbers: " + Arrays.toString(input) + "; result: " + Arrays.toString(result.toArray()) + "; expected: "
 					+ Arrays.toString(expected.toArray());
 
-			assertTrue(message, expected.containsAll(result) && result.containsAll(expected));
+			assertTrue((expected.containsAll(result) && result.containsAll(expected)), message);
 		}
 
 		{
@@ -57,7 +57,7 @@ public class SummaryRanges_NO_228_Tests {
 			String message = "Numbers: " + Arrays.toString(input) + "; result: " + Arrays.toString(result.toArray()) + "; expected: "
 					+ Arrays.toString(expected.toArray());
 
-			assertTrue(message, expected.containsAll(result) && result.containsAll(expected));
+			assertTrue((expected.containsAll(result) && result.containsAll(expected)), message);
 		}
 	}
 
@@ -74,7 +74,7 @@ public class SummaryRanges_NO_228_Tests {
 			String message = "Numbers: " + Arrays.toString(input) + "; result: " + Arrays.toString(result.toArray()) + "; expected: "
 					+ Arrays.toString(expected.toArray());
 
-			assertTrue(message, expected.containsAll(result) && result.containsAll(expected));
+			assertTrue((expected.containsAll(result) && result.containsAll(expected)), message);
 		}
 
 
@@ -86,7 +86,7 @@ public class SummaryRanges_NO_228_Tests {
 			String message = "Numbers: " + Arrays.toString(input) + "; result: " + Arrays.toString(result.toArray()) + "; expected: "
 					+ Arrays.toString(expected.toArray());
 
-			assertTrue(message, expected.containsAll(result) && result.containsAll(expected));
+			assertTrue((expected.containsAll(result) && result.containsAll(expected)), message);
 		}
 		
 		{
@@ -97,7 +97,7 @@ public class SummaryRanges_NO_228_Tests {
 			String message = "Numbers: " + Arrays.toString(input) + "; result: " + Arrays.toString(result.toArray()) + "; expected: "
 					+ Arrays.toString(expected.toArray());
 
-			assertTrue(message, expected.containsAll(result) && result.containsAll(expected));
+			assertTrue((expected.containsAll(result) && result.containsAll(expected)), message);
 		}
 	}
 
@@ -110,14 +110,14 @@ public class SummaryRanges_NO_228_Tests {
 			int[] input = new int[] { };
 			List<String> result = solution.summaryRanges(input);
 
-			assertTrue("Result not empty", result.size() == 0);
+			assertTrue((result.isEmpty()), "Result not empty");
 		}
 		
 		{
 			int[] input = new int[] {1};
 			List<String> result = solution.summaryRanges(input);
 
-			assertTrue("Single element test", result.size() == 1 && "1".equals(result.get(0)));
+			assertTrue(result.size() == 1 && "1".equals(result.get(0)), "Single element test");
 		}
 	}
 

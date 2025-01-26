@@ -1,14 +1,15 @@
 package dev.ilswe.leetcode.solutions.mmxxiv;
 
-import static org.junit.Assert.assertTrue;
-
-import java.util.Arrays;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import dev.ilswe.leetcode.solutions.mmxxiv.TwoSum2InputArrayIsSorted_NO_167;
+
+import java.util.Arrays;
 
 public class TwoSum2InputArrayIsSorted_NO_167_Tests {
 	private long timer = 0l;
@@ -22,7 +23,7 @@ public class TwoSum2InputArrayIsSorted_NO_167_Tests {
 	}
 
 	@AfterEach
-	public void finalize() {
+	public void afterEach() {
 		System.out.println(
 				"JUNIT for " + this.getClass().getSimpleName() + " completed in " + (System.nanoTime() - timer) + "ns");
 	}
@@ -35,7 +36,8 @@ public class TwoSum2InputArrayIsSorted_NO_167_Tests {
 			int[] expected = new int[] { 1, 2 };
 			String message = "Numbers: " + Arrays.toString(numbers) + "; target: " + target + "; Expected: "
 					+ Arrays.toString(expected);
-			assertTrue(message, Arrays.equals(solution.twoSum(numbers, target), expected));
+
+			assertArrayEquals(solution.twoSum(numbers, target), expected, message);
 		}
 
 		{
@@ -44,7 +46,7 @@ public class TwoSum2InputArrayIsSorted_NO_167_Tests {
 			int[] expected = new int[] { 1, 3 };
 			String message = "Numbers: " + Arrays.toString(numbers) + "; target: " + target + "; Expected: "
 					+ Arrays.toString(expected);
-			assertTrue(message, Arrays.equals(solution.twoSum(numbers, target), expected));
+			assertArrayEquals(solution.twoSum(numbers, target), expected, message);
 		}
 
 		{
@@ -53,7 +55,7 @@ public class TwoSum2InputArrayIsSorted_NO_167_Tests {
 			int[] expected = new int[] { 1, 2 };
 			String message = "Numbers: " + Arrays.toString(numbers) + "; target: " + target + "; Expected: "
 					+ Arrays.toString(expected);
-			assertTrue(message, Arrays.equals(solution.twoSum(numbers, target), expected));
+			assertArrayEquals(solution.twoSum(numbers, target), expected, message);
 		}
 	}
 
@@ -66,7 +68,7 @@ public class TwoSum2InputArrayIsSorted_NO_167_Tests {
 			int[] expected = new int[] { 1, 5 };
 			String message = "Numbers: " + Arrays.toString(numbers) + "; target: " + target + "; Expected: "
 					+ Arrays.toString(expected);
-			assertTrue(message, Arrays.equals(solution.twoSum(numbers, target), expected));
+			assertArrayEquals(solution.twoSum(numbers, target), expected, message);
 		}
 
 		{
@@ -75,7 +77,7 @@ public class TwoSum2InputArrayIsSorted_NO_167_Tests {
 			int[] expected = new int[] { 1, 3 };
 			String message = "Numbers: " + Arrays.toString(numbers) + "; target: " + target + "; Expected: "
 					+ Arrays.toString(expected);
-			assertTrue(message, Arrays.equals(solution.twoSum(numbers, target), expected));
+			assertArrayEquals(solution.twoSum(numbers, target), expected, message);
 		}
 
 		{
@@ -84,7 +86,7 @@ public class TwoSum2InputArrayIsSorted_NO_167_Tests {
 			int[] expected = new int[] { 2, 4 };
 			String message = "Numbers: " + Arrays.toString(numbers) + "; target: " + target + "; Expected: "
 					+ Arrays.toString(expected);
-			assertTrue(message, Arrays.equals(solution.twoSum(numbers, target), expected));
+			assertArrayEquals(solution.twoSum(numbers, target), expected, message);
 		}
 		
 		{
@@ -93,7 +95,7 @@ public class TwoSum2InputArrayIsSorted_NO_167_Tests {
 			int[] expected = new int[] { 2, 5 };
 			String message = "Numbers: " + Arrays.toString(numbers) + "; target: " + target + "; Expected: "
 					+ Arrays.toString(expected);
-			assertTrue(message, Arrays.equals(solution.twoSum(numbers, target), expected));
+			assertArrayEquals(solution.twoSum(numbers, target), expected, message);
 		}
 		
 		{
@@ -102,7 +104,7 @@ public class TwoSum2InputArrayIsSorted_NO_167_Tests {
 			int[] expected = new int[] { 2, 4 };
 			String message = "Numbers: " + Arrays.toString(numbers) + "; target: " + target + "; Expected: "
 					+ Arrays.toString(expected);
-			assertTrue(message, Arrays.equals(solution.twoSum(numbers, target), expected));
+			assertArrayEquals(solution.twoSum(numbers, target), expected, message);
 		}
 		
 		{
@@ -111,7 +113,7 @@ public class TwoSum2InputArrayIsSorted_NO_167_Tests {
 			int[] expected = new int[] { 2, 3 };
 			String message = "Numbers: " + Arrays.toString(numbers) + "; target: " + target + "; Expected: "
 					+ Arrays.toString(expected);
-			assertTrue(message, Arrays.equals(solution.twoSum(numbers, target), expected));
+			assertArrayEquals(solution.twoSum(numbers, target), expected, message);
 		}		
 
 	}
