@@ -2,6 +2,9 @@ package dev.ilswe.leetcode.solutions.mmxxv;
 
 import java.util.Iterator;
 
+/*
+ * LC Results: 59% runtime, 43% memory
+ */
 public class MedianOfTwoSortedArrays_NO_4 {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
@@ -11,18 +14,12 @@ public class MedianOfTwoSortedArrays_NO_4 {
         int medianPosition = (int) ((nums1.length + nums2.length) / 2) + (isSizeEven ? -1 : 0);
 
         int gen = 0;
-        double result = 0.0;
-        boolean extraIteration = false;
         while (iterator.hasNext()) {
             if(medianPosition == gen) {
-                result += iterator.next();
+                int result = iterator.next();
 
-                //allow one more iteration
-                if (isSizeEven && !extraIteration) {
-                    medianPosition += 1;
-                    extraIteration = true;
-                } else if(extraIteration) {
-                     return result = result / 2;
+                if (isSizeEven) {
+                     return ((double)(result + iterator.next())) / 2;
                 } else {
                     return result;
                 }
@@ -71,16 +68,5 @@ class TwoSortedArraysIterator implements Iterator<Integer> {
             itB += 1;
             return arrayB[itB - 1];
         }
-
-    }
-
-    public static void main(String[] args) {
-        int[] a = {1,2,4,5,10};
-        int[] b = {0,3,4,5,6,7,8,9};
-
-        TwoSortedArraysIterator it = new TwoSortedArraysIterator(a,b);
-
-        it.forEachRemaining(System.out::println);
     }
 }
-

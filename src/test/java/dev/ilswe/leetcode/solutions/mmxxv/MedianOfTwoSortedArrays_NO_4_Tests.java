@@ -4,7 +4,12 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * Template class for testing, could be added as "Live Templates" to IDE
@@ -107,5 +112,21 @@ public class MedianOfTwoSortedArrays_NO_4_Tests {
 	@Test
 	public void test_reruns() {
 		
+	}
+
+	@Test
+	public void test_misc() {
+		int[] a = {1,2,4,5,10};
+		int[] b = {0,3,4,5,6,7,8,9};
+
+		TwoSortedArraysIterator it = new TwoSortedArraysIterator(a,b);
+
+
+		List<Integer> collection = new ArrayList<>();
+		it.forEachRemaining(collection::add);
+
+		assertEquals(a.length + b.length, collection.size());
+		assertArrayEquals(new int[]{0, 1, 2, 3, 4, 4, 5, 5, 6, 7, 8, 9, 10},
+				collection.stream().mapToInt(Integer::intValue).toArray());
 	}
 }
