@@ -33,13 +33,18 @@ public class LengthofLongestFibonacciSubsequence_NO_873 {
 
         while (startIdx < arr.length -2 && secondIdx < arr.length -1 && thirdIdx < arr.length) {
             //System.out.println("3rd level: index 1:" + startIdx + " index 2: " + secondIdx + " index 3: " + thirdIdx);
-            if (isFibonacciSequence(arr[startIdx], arr[secondIdx], arr[thirdIdx])) {
+
+            int fiboIndicator = isFibonacciSequence(arr[startIdx], arr[secondIdx], arr[thirdIdx]);
+            if (fiboIndicator == 0) {
                 step += step == 0 ? 3 : 1;
 
                 //System.out.println("Fibonacci found, shifting to the next value: new 1st:" + secondIdx + " new second: "
                 //        + thirdIdx + " current longest sequence: " + step);
 
                 return checkFibonacciSequence3rdIdx(arr, secondIdx, thirdIdx, step);
+            } else if (fiboIndicator < 0) {
+                //check value exceeds first and seconds, Fibonacci sequence interrupted, skip further elements
+                return step;
             }
 
             thirdIdx++;
@@ -48,7 +53,14 @@ public class LengthofLongestFibonacciSubsequence_NO_873 {
         return step;
     }
 
-    private boolean isFibonacciSequence(int a, int b, int c) {
-        return (a + b) == c;
+    /**
+     * Less than 0 means a + b is less than C
+     * 0 means a + b == c (fibonacci sequence)
+     * More than 0 means a + b is greater than C
+     *
+     * This function is used to skip rest of the elements in the array if result is less than 0
+     */
+    private int isFibonacciSequence(int a, int b, int c) {
+        return a + b - c;
     }
 }
