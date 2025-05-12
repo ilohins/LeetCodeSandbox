@@ -117,6 +117,13 @@ public class LengthofLongestFibonacciSubsequence_NO_873_Tests {
 			String explanation = "Result did not match for the following input: " + Arrays.toString(arr);
 			Assertions.assertEquals(0, solution.lenLongestFibSubseq(arr), explanation);
 		}
+
+		{
+			int[] arr = new int[] {1,2,3,4,5,6,7,8,9,13,15,20,21,100};
+
+			String explanation = "Result did not match for the following input: " + Arrays.toString(arr);
+			Assertions.assertEquals(7, solution.lenLongestFibSubseq(arr), explanation);
+		}
 	}
 	
 	/**
